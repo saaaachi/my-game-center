@@ -5,69 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>44個の暇つぶしゲームセンター</title>
     <style>
+        /* 全体の背景とフォント */
         body { font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #f0f2f5; margin: 0; padding: 10px; color: #444; }
         
-        header { text-align: center; padding: 30px 0; background: #fff; border-bottom: 4px solid #007bff; border-radius: 0 0 15px 15px; margin-bottom: 20px; }
-        h1 { margin: 0; font-size: 1.4rem; color: #333; }
-        header p { font-size: 0.8rem; color: #777; margin: 5px 0 0; }
+        header { text-align: center; padding: 25px 0; background: #fff; border-bottom: 4px solid #007bff; border-radius: 0 0 15px 15px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        h1 { margin: 0; font-size: 1.3rem; color: #333; }
+        header p { font-size: 0.75rem; color: #777; margin: 5px 0 0; }
 
-        .container { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+        /* リストを囲むコンテナ */
+        .container { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
 
-        /* 横長のリスト形式に変更 */
+        /* ゲームカード：横並び＆高さを抑える */
         .game-card { 
             background: #fff; 
             border-radius: 12px; 
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05); 
-            display: flex; /* 横並びにする */
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04); 
+            display: flex; 
             align-items: center; 
-            padding: 10px; 
+            padding: 8px 12px; 
             border: 1px solid #eee;
-            text-decoration: none; /* カード全体をリンクっぽく */
+            text-decoration: none;
             color: inherit;
+            transition: 0.2s;
         }
+        .game-card:hover { transform: scale(1.01); background-color: #fafafa; }
 
-        /* 写真を左側に固定 */
+        /* 左側の写真：さらにコンパクトに */
         .thumb-img { 
-            width: 80px; 
-            height: 80px; 
+            width: 55px; 
+            height: 55px; 
             object-fit: cover; 
             border-radius: 8px; 
-            margin-right: 15px; /* 右側に余白 */
-            flex-shrink: 0; /* 画像が潰れないように固定 */
+            margin-right: 12px;
+            flex-shrink: 0;
+            border: 1px solid #f0f0f0;
         }
 
-        /* 右側のテキストエリア */
+        /* 中央のテキストエリア：幅を自動調整 */
         .game-info { 
             flex-grow: 1; 
             text-align: left;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            min-width: 0; /* 文字溢れ防止 */
         }
 
-        .game-info h3 { margin: 0; font-size: 1rem; color: #333; }
+        .game-info h3 { margin: 0; font-size: 0.95rem; color: #333; }
         
+        /* 説明文を1行に限定 */
         .game-info p { 
-            font-size: 0.75rem; 
-            color: #777; 
-            margin: 4px 0 8px; 
-            line-height: 1.3;
-            display: -webkit-box;
-            -webkit-line-clamp: 2; /* 2行以上は省略 */
-            -webkit-box-orient: vertical;
-            overflow: hidden;
+            font-size: 0.7rem; 
+            color: #888; 
+            margin: 2px 0 0; 
+            white-space: nowrap; 
+            overflow: hidden; 
+            text-overflow: ellipsis; /* はみ出た分を「...」にする */
         }
 
-        /* ボタンを小さく右側に配置 */
+        /* 右端のボタン：小さくスッキリ */
         .btn { 
-            align-self: flex-start;
-            padding: 5px 15px; 
+            padding: 5px 12px; 
             background: linear-gradient(135deg, #007bff, #0056b3); 
             color: #fff; 
             text-decoration: none; 
             border-radius: 20px; 
-            font-size: 0.75rem; 
-            font-weight: bold; 
+            font-size: 0.7rem; 
+            font-weight: bold;
+            margin-left: 10px;
+            flex-shrink: 0; /* ボタンが潰れないように */
         }
     </style>
 </head>
@@ -83,18 +86,18 @@
         <img src="images/IMG_5591.jpeg" alt="Task Master" class="thumb-img">
         <div class="game-info">
             <h3>Task Master</h3>
-            <p>次々現れる注文を正確にクリアしよう！集中力が鍵を握るパズル。</p>
-            <a href="Task-Master.html" class="btn">遊ぶ</a>
+            <p>次々現れる注文を正確にクリアしよう！集中力が鍵。</p>
         </div>
+        <a href="Task-Master.html" class="btn">遊ぶ</a>
     </div>
 
     <div class="game-card">
         <img src="images/IMG_5619.jpeg" alt="Sort-Master" class="thumb-img">
         <div class="game-info">
             <h3>Sort-Master</h3>
-            <p>ボールを賢く仕分けて、同じ色のブロックを完成させるパズル。</p>
-            <a href="Sort-Master.html" class="btn">遊ぶ</a>
+            <p>同じ色のボールを賢く仕分けて、ブロックを完成させよう！</p>
         </div>
+        <a href="Sort-Master.html" class="btn">遊ぶ</a>
     </div>
 
     </div>
