@@ -5,61 +5,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>44個の暇つぶしゲームセンター</title>
     <style>
-        /* 個別ページに合わせたモダンな背景 */
-        body { font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #f0f2f5; margin: 0; padding: 20px; color: #444; }
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #f0f2f5; margin: 0; padding: 10px; color: #444; }
         
-        header { text-align: center; padding: 50px 0; background: #fff; border-bottom: 5px solid #007bff; border-radius: 0 0 20px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 40px; }
-        h1 { margin: 0; color: #333; font-size: 1.8rem; }
-        header p { color: #666; margin-top: 10px; }
+        header { text-align: center; padding: 30px 0; background: #fff; border-bottom: 4px solid #007bff; border-radius: 0 0 15px 15px; margin-bottom: 20px; }
+        h1 { margin: 0; font-size: 1.4rem; color: #333; }
+        header p { font-size: 0.8rem; color: #777; margin: 5px 0 0; }
 
-        .container { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto; }
+        .container { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
 
-        /* ゲームカードをオシャレに */
-        .game-card { background: #fff; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); overflow: hidden; transition: 0.3s; text-align: center; padding: 15px; border: 1px solid #eee; }
-        .game-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
-
-        /* 画像を小さく表示（1/6イメージ） */
-        .thumb-img { 
-            width: 100px; /* 小さめに設定 */
-            height: 100px; 
-            object-fit: cover; /* 縦横比を保って切り抜き */
-            border-radius: 10px; 
-            margin-bottom: 10px;
-            border: 1px solid #f0f0f0;
+        /* 横長のリスト形式に変更 */
+        .game-card { 
+            background: #fff; 
+            border-radius: 12px; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05); 
+            display: flex; /* 横並びにする */
+            align-items: center; 
+            padding: 10px; 
+            border: 1px solid #eee;
+            text-decoration: none; /* カード全体をリンクっぽく */
+            color: inherit;
         }
 
-        .game-card h3 { margin: 10px 0 5px; font-size: 1.1rem; color: #333; }
-        
-        /* 説明文を小さく(個別ページと統一) */
-        .game-card p { font-size: 0.85rem; color: #777; margin-bottom: 15px; line-height: 1.4; height: 3em; overflow: hidden; }
+        /* 写真を左側に固定 */
+        .thumb-img { 
+            width: 80px; 
+            height: 80px; 
+            object-fit: cover; 
+            border-radius: 8px; 
+            margin-right: 15px; /* 右側に余白 */
+            flex-shrink: 0; /* 画像が潰れないように固定 */
+        }
 
-        /* ボタンをオシャレに */
-        .btn { display: inline-block; padding: 8px 20px; background: linear-gradient(135deg, #007bff, #0056b3); color: #fff; text-decoration: none; border-radius: 50px; font-size: 0.9rem; font-weight: bold; transition: 0.3s; }
-        .btn:hover { opacity: 0.9; }
+        /* 右側のテキストエリア */
+        .game-info { 
+            flex-grow: 1; 
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .game-info h3 { margin: 0; font-size: 1rem; color: #333; }
+        
+        .game-info p { 
+            font-size: 0.75rem; 
+            color: #777; 
+            margin: 4px 0 8px; 
+            line-height: 1.3;
+            display: -webkit-box;
+            -webkit-line-clamp: 2; /* 2行以上は省略 */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* ボタンを小さく右側に配置 */
+        .btn { 
+            align-self: flex-start;
+            padding: 5px 15px; 
+            background: linear-gradient(135deg, #007bff, #0056b3); 
+            color: #fff; 
+            text-decoration: none; 
+            border-radius: 20px; 
+            font-size: 0.75rem; 
+            font-weight: bold; 
+        }
     </style>
 </head>
 <body>
 
 <header>
     <h1>🎮 44個の暇つぶしゲームセンター</h1>
-    <p>ブラウザで今すぐ遊べる自作ゲーム集です！</p>
+    <p>サクッと遊べる自作ゲーム集</p>
 </header>
 
 <div class="container">
     <div class="game-card">
         <img src="images/IMG_5591.jpeg" alt="Task Master" class="thumb-img">
-        <h3>Task Master</h3>
-        <p>お客さんの注文をどんどんクリアしよう。</p>
-        <a href="Task-Master.html" class="btn">遊んでみる</a>
+        <div class="game-info">
+            <h3>Task Master</h3>
+            <p>次々現れる注文を正確にクリアしよう！集中力が鍵を握るパズル。</p>
+            <a href="Task-Master.html" class="btn">遊ぶ</a>
+        </div>
     </div>
 
     <div class="game-card">
         <img src="images/IMG_5619.jpeg" alt="Sort-Master" class="thumb-img">
-        <h3>Sort-Master</h3>
-        <p>色のボールを賢く仕分けて、ブロックを完成させよう！</p>
-        <a href="Sort-Master.html" class="btn">遊んでみる</a>
+        <div class="game-info">
+            <h3>Sort-Master</h3>
+            <p>ボールを賢く仕分けて、同じ色のブロックを完成させるパズル。</p>
+            <a href="Sort-Master.html" class="btn">遊ぶ</a>
+        </div>
     </div>
-</div>
+
+    </div>
 
 </body>
 </html>
